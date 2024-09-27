@@ -1,0 +1,129 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Hide the menu by default on mobile */
+nav ul {
+    display: none;
+}
+
+nav:before {
+    content: "☰";
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+nav ul li {
+    margin: 0 15px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Main Layout */
+.container {
+    display: flex;
+    flex: 1;
+    padding: 1rem;
+}
+
+/* Main content */
+main {
+    flex: 3;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    text-align: justify;
+}
+
+/* Sidebar */
+aside {
+    flex: 1;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    text-align: justify;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    padding: 1rem;
+    color: white;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* For tablets and smaller screens, adjust layout */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    aside {
+        margin-top: 1rem;
+    }
+}
+
+/* For mobile view (up to 480px) */
+@media (max-width: 480px) {
+    .header-container {
+        justify-content: space-between;
+    }
+
+    nav.active ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #444;
+        width: 100%;
+        padding: 1rem 0;
+    }
+    
+    /* Optional: Hide the full menu on mobile until clicked */
+    nav ul {
+        display: none;
+    }
+}
+
+/* For larger screens (reset the hamburger menu) */
+@media (min-width: 481px) {
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav:before {
+        display: none;
+    }
+}
